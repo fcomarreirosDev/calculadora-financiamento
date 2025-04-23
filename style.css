@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --red-background: #bf2626;
+    --yellow-background-calc: #f2b138;
+    --green-dark-two: #5c8374;
+    --green-dark-three: #93b1a6;
+}
+
+body {
+    background-color: var(--red-background);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#calculator-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding-right: 3rem;
+
+}
+
+#calculator-title h2 {
+    font-size: 28px;
+    font-family: monospace;
+    margin-left: -3rem;
+    font-weight: bold;
+    font-style: oblique;
+    border-bottom: 5px solid #333;
+
+}
+
+
+#calculator-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yellow-background-calc);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+#calculator-container img {
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+}
+
+.input-calculator {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+label {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: black;
+}
+
+input {
+    border-radius: 10px;
+    height: 2rem;
+    outline: none;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#button-calculator {
+    border-radius: 10px;
+    height: 2.2rem;
+    width: 16rem;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+    color: black;
+    cursor: pointer;
+}
+
+#container-button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-button #reset {
+    margin-left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#reset:hover {
+    color: rgb(24, 22, 22);
+}
+
+#button-calculator:hover {
+    background-color: rgb(24, 22, 22);
+    color: white;
+}
+
+.installment-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: all 0.3s ease-in-out;
+}
+
+.installment-container p {
+    margin: 8px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: center;
+}

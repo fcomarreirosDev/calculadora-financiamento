@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Planos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section id="calculator">
+        <div id="calculator-container">
+            <div id="calculator-title">
+                <img src="imagem/LOGO_PARAIBA_02.png" alt="Logo_paraiba" />
+                <h2>Calculadora</h2>
+            </div>
+
+            <form id="calculator-form">
+                <div class="input-calculator">
+                    <label for="valor-vista">Valor à vista:</label>
+                    <input type="number" id="valor-vista" />
+                </div>
+
+                <div class="input-calculator">
+                    <label for="valor-garantia">Valor da garantia:</label>
+                    <input type="number" id="valor-garantia" />
+                </div>
+
+                <div class="input-calculator">
+                    <label for="valor-entrada">Valor da entrada:</label>
+                    <input type="number" id="valor-entrada" />
+                </div>
+
+                <div id="container-button">
+                    <button type="button" id="button-calculator">Calcular</button>
+                    <i id="reset" class="bx bx-reset"></i>
+                </div>
+            </form>
+
+            <div id="resultinstallment" class="installment-container"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
