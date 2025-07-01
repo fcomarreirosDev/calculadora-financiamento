@@ -36,7 +36,7 @@ document.getElementById("button-calculator").addEventListener("click", function 
   resultadoDiv.innerHTML += `<p>${parcelasSemJuros}x de <strong>${valorFormatadoSemJuros}</strong> (sem juros)</p>`;
 
   // Parcelas de 4x a 12x (com juros)
-  const taxa = 0.109; // 11,9% ao mês
+  const taxa = 0.1190; // 11,9% ao mês
 
   for (let parcelas = 4; parcelas <= 12; parcelas++) {
     const i = taxa;
