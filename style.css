@@ -6,8 +6,8 @@
 }
 
 :root {
-    --red-background: #210554;
-    --yellow-background-calc: #130c2d;
+    --red-background: #bf2626;
+    --yellow-background-calc: #f2b138;
     --green-dark-two: #5c8374;
     --green-dark-three: #93b1a6;
 }
@@ -77,7 +77,7 @@ label {
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: 1.1rem;
-    color: rgb(170, 165, 165);
+    color: black;
 }
 
 input {
