@@ -36,21 +36,52 @@ document.getElementById("button-calculator").addEventListener("click", function 
   resultadoDiv.innerHTML += `<p>${parcelasSemJuros}x de <strong>${valorFormatadoSemJuros}</strong> (sem juros)</p>`;
 
   // Parcelas de 4x a 12x (com juros)
-  const taxa = 0.0990; // 11,9% ao mês
+  const taxaCrediario = 0.119; // 11,9% ao mês
+  const taxaCartao = 0.0292; // 2,92% ao mês
 
+  let htmlCrediario = "<div style='margin-bottom: 1.5rem;'><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Crediário (11,9%)</h4>";
+  let htmlCartao = "<div><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Cartão de Crédito (2,92%)</h4>";
+
+  // Loop do Crediário: 4x a 12x com juros
   for (let parcelas = 4; parcelas <= 12; parcelas++) {
-    const i = taxa;
     const n = parcelas;
-
-    const pmt = valorFinanciado * ((i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1));
-
-    const valorFormatado = pmt.toLocaleString("pt-BR", {
+    const pmtCrediario = valorFinanciado * ((taxaCrediario * Math.pow(1 + taxaCrediario, n)) / (Math.pow(1 + taxaCrediario, n) - 1));
+    const valorFormatadoCrediario = pmtCrediario.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
     });
-
-    resultadoDiv.innerHTML += `<p>${parcelas}x de <strong>${valorFormatado}</strong> (com juros)</p>`;
+    htmlCrediario += `<p>${parcelas}x de <strong>${valorFormatadoCrediario}</strong></p>`;
   }
+
+  // Loop do Cartão de Crédito: 6x sem juros, 7x a 12x com juros
+  for (let parcelas = 6; parcelas <= 12; parcelas++) {
+    const n = parcelas;
+    let valorFormatadoCartao = "";
+
+    if (n === 6) {
+      // Sem juros
+      const pmtCartaoSemJuros = valorFinanciado / n;
+      valorFormatadoCartao = pmtCartaoSemJuros.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+      htmlCartao += `<p>${parcelas}x de <strong>${valorFormatadoCartao}</strong> (sem juros)</p>`;
+    } else {
+      // Com juros
+      const pmtCartao = valorFinanciado * ((taxaCartao * Math.pow(1 + taxaCartao, n)) / (Math.pow(1 + taxaCartao, n) - 1));
+      valorFormatadoCartao = pmtCartao.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+      htmlCartao += `<p>${parcelas}x de <strong>${valorFormatadoCartao}</strong></p>`;
+    }
+  }
+
+  htmlCrediario += "</div>";
+  htmlCartao += "</div>";
+
+  resultadoDiv.innerHTML += htmlCrediario;
+  resultadoDiv.innerHTML += htmlCartao;
 });
 
 // Evento para o ícone de reset (limpar inputs e resultados)
