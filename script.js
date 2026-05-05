@@ -26,20 +26,21 @@ document.getElementById("button-calculator").addEventListener("click", function 
     return;
   }
 
-  // Parcelas de 3x (sem juros)
+  // Parcelas de 4x a 12x (com juros)
+  const taxaCrediario = 0.119; // 11,9% ao mês
+  const taxaCartao = 0.0292; // 2,92% ao mês
+
+  let htmlCrediario = "<div style='margin-bottom: 1.5rem;'><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Crediário (11,9%)</h4>";
+  
+  // Adiciona a parcela de 3x sem juros ao Crediário
   const parcelasSemJuros = 3;
   const valorParcelaSemJuros = valorFinanciado / parcelasSemJuros;
   const valorFormatadoSemJuros = valorParcelaSemJuros.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-  resultadoDiv.innerHTML += `<p>${parcelasSemJuros}x de <strong>${valorFormatadoSemJuros}</strong> (sem juros)</p>`;
+  htmlCrediario += `<p>${parcelasSemJuros}x de <strong>${valorFormatadoSemJuros}</strong> (sem juros)</p>`;
 
-  // Parcelas de 4x a 12x (com juros)
-  const taxaCrediario = 0.119; // 11,9% ao mês
-  const taxaCartao = 0.0292; // 2,92% ao mês
-
-  let htmlCrediario = "<div style='margin-bottom: 1.5rem;'><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Crediário (11,9%)</h4>";
   let htmlCartao = "<div><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Cartão de Crédito (2,92%)</h4>";
 
   // Loop do Crediário: 4x a 12x com juros
