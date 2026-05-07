@@ -238,8 +238,8 @@ input:focus {
 }
 
 .no-interest {
-    font-size: 0.75rem;
-    color: #16a34a;
+    font-size: 0.65rem;
+    color: red;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -266,7 +266,7 @@ input:focus {
 @media (max-width: 768px) {
     body {
         background-image: url('imagem/Banner_mobile.JPG');
-        background-position: top center; /* Better positioning for mobile banners */
+        background-position: top center;
     }
 
     #calculator-container {
