@@ -39,7 +39,7 @@ document.getElementById("button-calculator").addEventListener("click", function 
     style: "currency",
     currency: "BRL",
   });
-  htmlCrediario += `<p>${parcelasSemJuros}x de <strong>${valorFormatadoSemJuros}</strong> (sem juros)</p>`;
+  htmlCrediario += `<p><span>${parcelasSemJuros}x de</span> <span><strong>${valorFormatadoSemJuros}</strong> <span class='no-interest'>(sem juros)</span></span></p>`;
 
   let htmlCartao = "<div><h4 style='text-align: center; margin-bottom: 1rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;'>Cartão de Crédito</h4>";
 
@@ -51,7 +51,7 @@ document.getElementById("button-calculator").addEventListener("click", function 
       style: "currency",
       currency: "BRL",
     });
-    htmlCrediario += `<p>${parcelas}x de <strong>${valorFormatadoCrediario}</strong></p>`;
+    htmlCrediario += `<p><span>${parcelas}x de</span> <span><strong>${valorFormatadoCrediario}</strong></span></p>`;
   }
 
   // Loop do Cartão de Crédito: 6x sem juros, 7x a 12x com juros
@@ -66,7 +66,7 @@ document.getElementById("button-calculator").addEventListener("click", function 
         style: "currency",
         currency: "BRL",
       });
-      htmlCartao += `<p>${parcelas}x de <strong>${valorFormatadoCartao}</strong> (sem juros)</p>`;
+      htmlCartao += `<p><span>${parcelas}x de</span> <span><strong>${valorFormatadoCartao}</strong> <span class='no-interest'>(sem juros)</span></span></p>`;
     } else {
       // Com juros
       const pmtCartao = valorFinanciado * ((taxaCartao * Math.pow(1 + taxaCartao, n)) / (Math.pow(1 + taxaCartao, n) - 1));
@@ -74,7 +74,7 @@ document.getElementById("button-calculator").addEventListener("click", function 
         style: "currency",
         currency: "BRL",
       });
-      htmlCartao += `<p>${parcelas}x de <strong>${valorFormatadoCartao}</strong></p>`;
+      htmlCartao += `<p><span>${parcelas}x de</span> <span><strong>${valorFormatadoCartao}</strong></span></p>`;
     }
   }
 
